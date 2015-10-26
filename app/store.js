@@ -2,10 +2,15 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 
 import Session from './models/session';
+import UserCollection from './models/user-collection';
 
 let session;
 export default {
   getSession() {
     return (session = session || new Session());
+  },
+
+  getUserCollection() {
+    return (users = users || new UserCollection());
   }
 };
