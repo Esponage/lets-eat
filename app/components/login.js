@@ -12,14 +12,27 @@ handleSignUp(e) {
   e.preventDefault();
 },
 
-  render() {
-    return (
+render(){
+  return (
       <div>
-        <Link to="loginform"><button>Login</button></Link>
-        <Link to="signupform"><button>Signup</button></Link>
+        <div className="vid-div">
+          <video className="bgvid" src="davidequatelapeopleinfrankfurtmp4.mp4" type="video/mp4" autoPlay="autoplay" muted="muted" preload="auto" loop />
+        </div>
+        <div className="button-logs">
+          <ul className="log-buttons">
+            <li>
+              <Link to="loginform"><button className="go-button" type="button" name="button">Login</button></Link>
+            </li>
+            <li>
+              <Link to="signupform"><button className="go-button2" type="button" name="button">Sign Up</button></Link>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   }
 });
+
+
 
 export default Login;

@@ -3,3 +3,68 @@
 @import '~normalize.css/normalize.css';
 @import '~font-awesome/scss/font-awesome.scss';
 @import 'foundation';
+
+// buttons
+.vid-div::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(222, 62, 61, 1);
+    opacity: .4;
+    z-index: -1;
+}
+
+.bgvid {
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  visibility: visible;
+}
+
+.log-buttons > li {
+  list-style: none;
+}
+
+.log-buttons {
+  display: block;
+}
+
+.go-button,
+.go-button2 {
+  background-color: rgba(0, 112, 149, .8);
+  width: 200px;
+  height: 60px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  font-family: "Courgette";
+  font-size: 1.5rem;
+  margin: auto;
+  margin-bottom: 10px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.go-button {
+  position: fixed;
+  top: 400px;
+  left: 95px;
+}
+
+.go-button2 {
+  position: fixed;
+  top: 325px;
+  left: 95px;
+}
+
+// buttons
