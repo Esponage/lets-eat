@@ -32,7 +32,10 @@ render(){
     );
   }
 });
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> michaels_branch
 export default Login;

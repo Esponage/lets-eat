@@ -7,6 +7,7 @@ import Index from './components/index';
 import Login from './components/login';
 import LoginForm from './components/loginform';
 import Signup from './components/signupform';
+import Dashboard from './components/dashboard';
 
 import store from './store';
 
@@ -29,6 +30,7 @@ ReactDOM.render((
       <Route path="login" component={Login} onEnter={requireNotAuth} />
       <Route path="loginform" component={LoginForm} onEnter={requireNotAuth} />
       <Route path="signupform" component={Signup} onEnter={requireNotAuth} />
+      <Route path="dashboard" component={Dashboard} onEnter={requireAuth} />
     </Route>
   </Router>
 ), document.getElementById('application'));

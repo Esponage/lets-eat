@@ -4,6 +4,10 @@
 @import '~font-awesome/scss/font-awesome.scss';
 @import 'foundation';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> michaels_branch
 // buttons
 .vid-div::before {
     content: "";
@@ -17,7 +21,10 @@
     opacity: .4;
     z-index: -1;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> michaels_branch
 .bgvid {
   position: fixed;
   left: 0;
@@ -29,6 +36,7 @@
   z-index: -100;
   visibility: visible;
 }
+<<<<<<< HEAD
 
 .log-buttons > li {
   list-style: none;
@@ -38,6 +46,14 @@
   display: block;
 }
 
+=======
+.log-buttons > li {
+  list-style: none;
+}
+.log-buttons {
+  display: block;
+}
+>>>>>>> michaels_branch
 .go-button,
 .go-button2 {
   background-color: rgba(0, 112, 149, .8);
@@ -47,24 +63,121 @@
   border-bottom-left-radius: 50px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
+<<<<<<< HEAD
   font-family: "Courgette";
+=======
+  font-family: "Poriet One";
+>>>>>>> michaels_branch
   font-size: 1.5rem;
   margin: auto;
   margin-bottom: 10px;
   display: table-cell;
   vertical-align: middle;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> michaels_branch
 .go-button {
   position: fixed;
   top: 400px;
   left: 95px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> michaels_branch
 .go-button2 {
   position: fixed;
   top: 325px;
   left: 95px;
 }
+<<<<<<< HEAD
 
 // buttons
+=======
+// buttons
+// .login-container {
+//   content: "";
+//   display: block;
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   background-color: white;
+// }
+// .pic-div {
+//   background-image: url("./public/assets/images/Login-page-3.jpeg");
+//   background-size: cover;
+//   background-position: center;
+//   position: fixed;
+//   left: 0;
+//   top: 0;
+//   min-width: 100%;
+//   min-height: 100%;
+//   width: auto;
+//   height: auto;
+//   z-index: -100;
+//   visibility: visible;
+// }
+input.login-username,
+input.login-password,
+input.signup-email,
+input.signup-username,
+input.signup-password {
+  max-width: 300px;
+  margin-top: 5px;
+  margin: 0 auto;
+  box-shadow: none;
+  border: none;
+  // background-color: rgba(222, 62, 61, .5);
+  border-bottom: 1px solid rgba(222, 62, 61, 1);
+  margin-bottom: 20px;
+  vertical-align: middle;
+  color: black;
+  font-family: "Questrial";
+  position: relative;
+  top: 50%;
+  transform: translateY(500%);
+  &:focus {
+    background: transparent;
+    border-bottom: 1px solid rgba(222, 62, 61, 1);
+  }
+}
+.submit-login,
+.signup-login {
+  background-color: rgba(222, 62, 61, .8);
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  // border-top-left-radius: 50px;
+  // border-bottom-left-radius: 50px;
+  // border-top-right-radius: 50px;
+  // border-bottom-right-radius: 50px;
+  font-family: "Questrial";
+  font-size: 1.2rem;
+  padding: 5px;
+  margin: 0;
+}
+.fa-angle-right {
+  font-size: 2.5rem;
+}
+// input.signup-email,
+// input.signup-username,
+// input.signup-password {
+//   max-width: 300px;
+//   margin-top: 5px;
+//   margin: 0 auto;
+//   box-shadow: none;
+//   border: none;
+//   // background-color: rgba(222, 62, 61, .5);
+//   border-bottom: 1px solid rgba(222, 62, 61, 1);
+//   margin-bottom: 10px;
+//   vertical-align: middle;
+//   color: black;
+//   font-family: "Questrial";
+// }
+>>>>>>> michaels_branch
