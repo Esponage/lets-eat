@@ -1,9 +1,23 @@
 import React from 'react';
+import {Route, RouteHandler, Link} from 'react-router';
+
 
 var Login = React.createClass({
+
+handleLogin(e) {
+  e.preventDefault();
+},
+
+handleSignUp(e) {
+  e.preventDefault();
+},
+
   render() {
     return (
-      <h1>Login Test</h1>
+      <div>
+        <Link to="loginform"><button>Login</button></Link>
+        <Link to="signupform"><button>Signup</button></Link>
+      </div>
     );
   }
 });

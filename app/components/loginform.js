@@ -1,12 +1,11 @@
 import React from 'react';
-
+import { Route, RouteHandler, Link } from 'react-router';
 import store from '../store';
 
-const Signup = React.createClass({
+const LoginForm = React.createClass({
   propTypes: {
-    email: React.PropTypes.string.isRequired,
-    userName: React.PropTypes.string.isRequired,
-    password: React.PropTypes.string.isRequired
+    userName: React.PropTypes.string,
+    password: React.PropTypes.string
   },
 
   handleSubmit(e) {
@@ -22,7 +21,6 @@ const Signup = React.createClass({
 render () {
   return (
     <form action="">
-      <input type="text" placeholder="Email" defaultValue={this.props.email} ref="email" />
       <input type="text" placeholder="User Name" defaultValue={this.props.userName} ref="username" />
       <input type="text" placeholder="password" defaultValue={this.props.password} ref="password" />
       <button>Submit</button>
@@ -31,4 +29,4 @@ render () {
   }
 });
 
-export default Signup;
+export default LoginForm;
