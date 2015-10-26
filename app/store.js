@@ -4,7 +4,7 @@ import Backbone from 'backbone';
 import Session from './models/session';
 import UserCollection from './models/user-collection';
 
-let session;
+let session, users;
 export default {
   getSession() {
     return (session = session || new Session());
