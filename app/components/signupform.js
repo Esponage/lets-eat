@@ -28,7 +28,7 @@ render () {
   return (
     <div className="signup-container">
       <form action="">
-        <button className="signup-back"><i className="fa fa-chevron-left"></i></button>
+        <button className="signup-back"><i className="fa fa-angle-left"></i></button>
         <input className="signup-first" type="text" placeholder="First Name" defaultValue={this.props.firstname} ref="firstname" />
         <input className="signup-last" type="text" placeholder="Last Name" defaultValue={this.props.lastname} ref="lastname" />
         <input className="signup-email" type="text" placeholder="Email" defaultValue={this.props.email} ref="email" />

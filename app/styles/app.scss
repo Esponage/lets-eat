@@ -165,7 +165,7 @@ input.signup-password {
   font-family: "Poiret One";
   position: relative;
   top: 50%;
-  transform: translateY(300%);
+  transform: translateY(100%);
   &:focus {
     background: transparent;
     border-bottom: 1px solid rgba(222, 62, 61, 1);
@@ -176,6 +176,10 @@ input.signup-password {
   background: transparent;
 }
 
-.fa-chevron-left {
+.fa-angle-left {
   color: rgba(222, 62, 61, .8);
+  font-size: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
