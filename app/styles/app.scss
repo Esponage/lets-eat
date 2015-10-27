@@ -179,8 +179,10 @@ input.signup-password {
   left: 10px;
 
   &:focus,
-  &:active {
+  &:active,
+  &:hover {
     background: transparent;
+    color: transparent;
   }
 }
 
