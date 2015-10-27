@@ -21,10 +21,10 @@ render(){
         <div className="button-logs">
           <ul className="log-buttons">
             <li>
-              <Link to="loginform"><button className="go-button" type="button" name="button">Login</button></Link>
+              <Link to="/loginform"><button className="go-button" type="button" name="button">Login</button></Link>
             </li>
             <li>
-              <Link to="signupform"><button className="go-button2" type="button" name="button">Sign Up</button></Link>
+              <Link to="/signupform"><button className="go-button2" type="button" name="button">Sign Up</button></Link>
             </li>
           </ul>
         </div>
@@ -32,10 +32,5 @@ render(){
     );
   }
 });
-<<<<<<< HEAD
 
-
-
-=======
->>>>>>> michaels_branch
 export default Login;

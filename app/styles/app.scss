@@ -4,10 +4,6 @@
 @import '~font-awesome/scss/font-awesome.scss';
 @import 'foundation';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> michaels_branch
 // buttons
 .vid-div::before {
     content: "";
@@ -21,10 +17,6 @@
     opacity: .4;
     z-index: -1;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> michaels_branch
 .bgvid {
   position: fixed;
   left: 0;
@@ -36,7 +28,6 @@
   z-index: -100;
   visibility: visible;
 }
-<<<<<<< HEAD
 
 .log-buttons > li {
   list-style: none;
@@ -46,14 +37,13 @@
   display: block;
 }
 
-=======
 .log-buttons > li {
   list-style: none;
 }
 .log-buttons {
   display: block;
 }
->>>>>>> michaels_branch
+
 .go-button,
 .go-button2 {
   background-color: rgba(0, 112, 149, .8);
@@ -63,39 +53,28 @@
   border-bottom-left-radius: 50px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-<<<<<<< HEAD
   font-family: "Courgette";
-=======
   font-family: "Poriet One";
->>>>>>> michaels_branch
   font-size: 1.5rem;
   margin: auto;
   margin-bottom: 10px;
   display: table-cell;
   vertical-align: middle;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> michaels_branch
 .go-button {
   position: fixed;
   top: 400px;
   left: 95px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> michaels_branch
 .go-button2 {
   position: fixed;
   top: 325px;
   left: 95px;
 }
-<<<<<<< HEAD
 
 // buttons
-=======
 // buttons
 // .login-container {
 //   content: "";
@@ -180,4 +159,3 @@ input.signup-password {
 //   color: black;
 //   font-family: "Questrial";
 // }
->>>>>>> michaels_branch
