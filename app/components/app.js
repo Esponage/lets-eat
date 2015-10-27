@@ -28,7 +28,6 @@ var App = React.createClass({
 
     return (
       <div>
-
         {this.props.children}
       </div>
     );
