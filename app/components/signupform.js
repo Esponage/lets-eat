@@ -60,7 +60,7 @@ render () {
   return (
     <div className="signup-container">
       <form onSubmit={this.handleSubmit}>
-        <button className="signup-back"><i className="fa fa-angle-left"></i></button>
+        <Link to="/login"><button className="signup-back"><i className="fa fa-angle-left"></i></button></Link>
         <input className="signup-first" type="text" placeholder="First Name" defaultValue={this.props.firstname} ref="firstname" />
         <input className="signup-last" type="text" placeholder="Last Name" defaultValue={this.props.lastname} ref="lastname" />
         <input className="signup-email" type="text" placeholder="Email" defaultValue={this.props.email} ref="email" />
