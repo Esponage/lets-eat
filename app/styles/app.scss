@@ -53,12 +53,9 @@
   border-bottom-left-radius: 50px;
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
-<<<<<<< HEAD
   font-family: "Courgette";
   font-family: "Poriet One";
-=======
   font-family: "Poiret One";
->>>>>>> ceee5f1971f86f39636886f8257bd178f9d9a35b
   font-size: 1.5rem;
   margin: auto;
   margin-bottom: 10px;
@@ -108,6 +105,9 @@
 //   z-index: -100;
 //   visibility: visible;
 // }
+
+input.signup-first,
+input.signup-last,
 input.login-username,
 input.login-password,
 input.signup-email,
@@ -152,18 +152,30 @@ input.signup-password {
 .fa-angle-right {
   font-size: 2.5rem;
 }
-// input.signup-email,
-// input.signup-username,
-// input.signup-password {
-//   max-width: 300px;
-//   margin-top: 5px;
-//   margin: 0 auto;
-//   box-shadow: none;
-//   border: none;
-//   // background-color: rgba(222, 62, 61, .5);
-//   border-bottom: 1px solid rgba(222, 62, 61, 1);
-//   margin-bottom: 10px;
-//   vertical-align: middle;
-//   color: black;
-//   font-family: "Questrial";
-// }
+
+input.signup-first,
+input.signup-last,
+input.signup-email,
+input.signup-username,
+input.signup-password {
+  border-bottom: 1px solid rgba(222, 62, 61, 1);
+  margin-bottom: 20px;
+  vertical-align: middle;
+  color: black;
+  font-family: "Poiret One";
+  position: relative;
+  top: 50%;
+  transform: translateY(300%);
+  &:focus {
+    background: transparent;
+    border-bottom: 1px solid rgba(222, 62, 61, 1);
+  }
+}
+
+.signup-back {
+  background: transparent;
+}
+
+.fa-chevron-left {
+  color: rgba(222, 62, 61, .8);
+}
