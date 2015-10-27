@@ -2,6 +2,7 @@ import $ from 'jquery';
 import Backbone from 'backbone';
 
 import Session from './models/session';
+import User from './models/user';
 import UserCollection from './models/user-collection';
 
 let session, users;

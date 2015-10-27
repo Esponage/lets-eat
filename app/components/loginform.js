@@ -1,11 +1,20 @@
 import React from 'react';
-import { Route, RouteHandler, Link } from 'react-router';
+import { History, Route, RouteHandler, Link } from 'react-router';
 import store from '../store';
 
 const LoginForm = React.createClass({
   propTypes: {
     username: React.PropTypes.string,
-    password: React.PropTypes.string
+    password: React.PropTypes.string,
+    location: React.PropTypes.object
+  },
+
+  mixins: [ History ],
+
+  getInitialState() {
+    return {
+      error: false
+    }
   },
 
   handleSubmit(e) {
@@ -14,7 +23,22 @@ const LoginForm = React.createClass({
     username: this.refs.username.value,
     password: this.refs.password.value,
     creator: store.getSession().get('currentUser')
-  }, {wait: true});
+  });
+
+  let session = store.getSession();
+
+  session.authenticate({username, password}).then((loggedIn) => {
+    if (!loggedIn)
+      return this.setState({ error: true })
+
+      var { location } = this.this.props
+
+      if (location.state && location.state.nextPathname) {
+        this.history.replaceState(null, location.sate.nextPathname)
+      } else {
+        this.history.replaceState(null, '/')
+      }
+  })
 },
 
 render () {
@@ -24,6 +48,9 @@ render () {
       <input className="login-username loginsy" type="text" placeholder="Username" defaultValue={this.props.username} ref="username" />
       <input className="login-password loginsy" type="text" placeholder="Password" defaultValue={this.props.password} ref="password" />
       <button className="submit-login"><i className="fa fa-angle-right"></i></button>
+      {this.state.error && (
+        <p>Bad Login Information</p>
+      )}
     </form>
     </div>
     );

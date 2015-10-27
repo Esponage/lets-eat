@@ -4,14 +4,6 @@ import {Route, RouteHandler, Link} from 'react-router';
 
 var Login = React.createClass({
 
-handleLogin(e) {
-  e.preventDefault();
-},
-
-handleSignUp(e) {
-  e.preventDefault();
-},
-
 render(){
   return (
       <div>
