@@ -9,10 +9,12 @@ import CommentsCollection from './models/comment-collection';
 let session, users, comments;
 
 function searchResults(searchValue) {
-  var searchValue = "";
-  var key = "MOW7yxYUAObHJNI1wiQDt0VUMJ5sl9zQLfMsFXBu";
-  $.ajax('http://api.v3.factual.com/t/restaurants-us?') + searchValue + key;
+  var searchValue = "Greenville Sc";
+  var key = "&KEY=MOW7yxYUAObHJNI1wiQDt0VUMJ5sl9zQLfMsFXBu";
+  $.ajax('http://api.v3.factual.com/t/restaurants-us?q=' + searchValue + key);
 };
+
+searchResults();
 
 
 export default {
