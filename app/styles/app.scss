@@ -242,10 +242,32 @@ input.signup-password {
 .fa-thumbs-o-up,
 .fa-user {
   font-size: 1.2rem;
-  margin-right: 100px;
-  margin: 0 auto;
-
 }
+
+.fa-map-marker,
+.fa-home,
+.fa-thumbs-o-up {
+  position: relative;
+  top: 0;
+  right: 4px;
+}
+
+.fa-map-marker {
+  position: relative;
+  top: 0;
+  left: 1px;
+}
+
+.fa-thumbs-o-up {
+  position: relative;
+  top: 0;
+  right: 1px;
+}
+
+
+
+
+
 
 
 .search-button {
