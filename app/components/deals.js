@@ -1,8 +1,9 @@
 import React from 'react';
 import {Route, RouteHandler, Link} from 'react-router';
+import store from '../store';
 
 
-var Index = React.createClass({
+var Deals = React.createClass ({
 
   render() {
     return (
@@ -15,7 +16,7 @@ var Index = React.createClass({
         </header>
       </div>
       <div>
-        <h1>Home</h1>
+        <h1>Deals</h1>
       </div>
         <div className="row">
           <footer>
@@ -32,5 +33,4 @@ var Index = React.createClass({
     );
   }
 });
-
-export default Index;
+export default Deals;
