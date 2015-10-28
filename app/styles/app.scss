@@ -65,13 +65,13 @@
 
 .go-button {
   position: fixed;
-  top: 400px;
+  top: 350px;
   left: 95px;
 }
 
 .go-button2 {
   position: fixed;
-  top: 325px;
+  top: 275px;
   left: 95px;
 }
 
@@ -165,7 +165,7 @@ input.signup-password {
   font-family: "Poiret One";
   position: relative;
   top: 50%;
-  transform: translateY(100%);
+  transform: translateY(350%);
   &:focus {
     background: transparent;
     border-bottom: 1px solid rgba(222, 62, 61, 1);
@@ -174,12 +174,22 @@ input.signup-password {
 
 .signup-back {
   background: transparent;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+
+  &:focus,
+  &:active,
+  &:hover {
+    background: transparent;
+    color: transparent;
+  }
 }
 
 .fa-angle-left {
   color: rgba(222, 62, 61, .8);
   font-size: 2rem;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
 }

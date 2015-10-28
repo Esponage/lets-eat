@@ -19,11 +19,9 @@ const LoginForm = React.createClass({
 
   handleSubmit(e) {
   e.preventDefault();
-  store.getUsersCollection().create({
-    username: this.refs.username.value,
-    password: this.refs.password.value,
-    creator: store.getSession().get('currentUser')
-  });
+
+  let username = this.refs.username.value
+  let password = this.refs.password.value
 
   let session = store.getSession();
 
@@ -31,10 +29,10 @@ const LoginForm = React.createClass({
     if (!loggedIn)
       return this.setState({ error: true })
 
-      var { location } = this.this.props
+      var { location } = this.props
 
       if (location.state && location.state.nextPathname) {
-        this.history.replaceState(null, location.sate.nextPathname)
+        this.history.replaceState(null, location.state.nextPathname)
       } else {
         this.history.replaceState(null, '/')
       }
@@ -44,7 +42,8 @@ const LoginForm = React.createClass({
 render () {
   return (
     <div className="login-container">
-    <form action="">
+    <form onSubmit={this.handleSubmit}>
+      <Link to="/login"><button className="signup-back"><i className="fa fa-angle-left"></i></button></Link>
       <input className="login-username loginsy" type="text" placeholder="Username" defaultValue={this.props.username} ref="username" />
       <input className="login-password loginsy" type="text" placeholder="Password" defaultValue={this.props.password} ref="password" />
       <button className="submit-login"><i className="fa fa-angle-right"></i></button>
