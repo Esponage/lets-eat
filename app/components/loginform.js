@@ -19,7 +19,7 @@ const LoginForm = React.createClass({
 
   handleSubmit(e) {
   e.preventDefault();
-
+  console.log("hello");
   let username = this.refs.username.value
   let password = this.refs.password.value
 
@@ -46,7 +46,7 @@ render () {
       <form onSubmit={this.handleSubmit}>
       <input className="login-username loginsy" type="text" placeholder="Username" defaultValue={this.props.username} ref="username" />
       <input className="login-password loginsy" type="text" placeholder="Password" defaultValue={this.props.password} ref="password" />
-      <button className="submit-login"><i className="fa fa-angle-right"></i></button>
+      <button type="submit" className="submit-login"><i className="fa fa-angle-right"></i></button>
       {this.state.error && (
         <p>Bad Login Information</p>
       )}
