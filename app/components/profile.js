@@ -5,16 +5,33 @@ import store from '../store';
 
 var Profile = React.createClass ({
 
+  getInitialState (){
+    return {
+      isSearching: false
+    };
+  },
+
+  handleSearch () {
+    this.setState ({
+      isSearching: this.State.isEditing
+    });
+  },
+
+  initiateSearch() {
+    this.setState({
+      isSearching: true
+    })
+  },
+
   render() {
     return (
       <div>
+        {this.state.isSearching && <input type="search" className="search-box" onSubmit={this.handleSearch} />}
+
         <div className="top-nav">
-        <header>
-        <button className="settings-button"><i className="fa fa-cog"></i></button>
-        <img src="" alt="" />
-        <button className="search-button"><i className="fa fa-search"></i></button>
-        </header>
-      </div>
+          <img src="" alt="" />
+            <button className="search-button" onClick={this.initiateSearch}><i className="fa fa-search"></i></button>
+          </div>
       <div>
         <h1>Pro</h1>
       </div>

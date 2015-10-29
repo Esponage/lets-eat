@@ -5,16 +5,36 @@ import $ from 'jquery';
 
 var Index = React.createClass({
 
+  getInitialState (){
+    return {
+      isSearching: false
+    };
+  },
+
+  handleSearch () {
+    this.setState ({
+      isSearching: this.State.isSearching
+    });
+  },
+
+  toggleSearch() {
+    $(".fa-search").toggle();
+    $(".fa-times").toggle();
+    this.setState({
+      isSearching: !this.state.isSearching
+
+    })
+  },
+
 
   render() {
     return (
       <div>
+        {this.state.isSearching && <input type="search" className="search-box" placeholder="Find Food and Friends..." onSubmit={this.handleSearch} />}
         <div className="top-nav">
-        <header>
-        <img src="" alt="" />
-        <button className="search-button"><i className="fa fa-search"></i></button>
-        </header>
-      </div>
+          <img src="" alt="" />
+            <button className="search-button" onClick={this.toggleSearch}><i className="fa fa-search"></i><i className="fa fa-times"></i></button>
+          </div>
       <div>
         <h1>Home</h1>
       </div>

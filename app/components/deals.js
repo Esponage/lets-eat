@@ -8,13 +8,6 @@ var Deals = React.createClass ({
   render() {
     return (
       <div>
-        <div className="top-nav">
-        <header>
-        <button className="settings-button"><i className="fa fa-cog"></i></button>
-        <img src="" alt="" />
-        <button className="search-button"><i className="fa fa-search"></i></button>
-        </header>
-      </div>
       <div>
         <h1>Deals</h1>
       </div>
