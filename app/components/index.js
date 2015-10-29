@@ -1,8 +1,42 @@
 import React from 'react';
 import {Route, RouteHandler, Link} from 'react-router';
-
+import Search from '../components/search';
+import store from '../store';
+import Backbone from 'backbone';
+import BackboneMixin from '../mixins/backbone';
 
 var Index = React.createClass({
+
+  mixins: [BackboneMixin],
+
+  getModels() {
+    return {
+      restaurants: store.getRestaurants()
+    }
+  },
+
+  // componentWillMount() {
+  //     this.state.restaurant.on('change', this.forceUpdate.bind(this, null), this);
+  // },
+  //
+  // componentWillUnmount() {
+  //     this.state.restaurant.off('change', null, this);
+  // },
+
+  handleSubmit(e) {
+    e.preventDefault();
+    let search = this.refs.search.value;
+    store.searchRestaurants(search);
+    // this.setState.restaurant = store.getRestaurantCollection([], this.refs.search);
+    //   this.state.restaurant.fetch().then(
+    //     ()=> {
+    //       this.setState({
+    //         restaurant: this.state.restaurant
+    //       })
+    //     }
+    //   )
+  },
+
 
   render() {
     return (
@@ -15,8 +49,14 @@ var Index = React.createClass({
         </header>
       </div>
       <div>
-        <h1>Home</h1>
+        <h1>Search</h1>
+        <form onSubmit={this.handleSubmit}>
+          <input className="searchbox" type="search" ref="search"/>
+        </form>
+            {this.state.restaurants.map((result) => <Index key={result.factual_id} {...result}/> )}
+
       </div>
+
         <div className="row">
           <footer>
             <nav className="dashboard-nav">

@@ -1,22 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router';
+import store from '../store';
+import Index from '../components/index';
 
 var Search = React.createClass({
 
   getInitialState() {
     return {
-      search: "",
-      results: []
-    };
+      restaurant: store.getRestaurantCollection()
+    }
   },
 
-  handleChange(event) {
-    this.setState({search: event.target.value});
+  componentWillMount() {
+      this.state.restaurant.on('change', this.forceUpdate.bind(this, null), this);
+  },
+
+  componentWillUnmount() {
+      this.state.restaurant.off('change', null, this);
   },
 
   handleSubmit(e) {
     e.preventDefault();
-
+    this.setState.restaurant = store.getRestaurantCollection([], this.refs.search.value);
+      this.state.restaurant.fetch().then(
+        ()=> {
+          this.setState({
+            restaurant: this.state.restaurant
+          })
+        }
+      )
   },
 
   render() {
@@ -31,19 +43,14 @@ var Search = React.createClass({
             />
         </form>
 
-        {this.props.children && React.cloneElement(this.props.children, {
-          SOMETHINGHERE: this.state.results
+        <input type="search" />
         })}
 
         <ul>
-          {this.state.results.map((result) => {
-            return (
-              <li key={result.id}>
-                <Link
-                    to={SOMETHING}>
-                    {result.SOMETHING}
-                </Link>
-              </li>
+          <li>
+            {this.state.restaurant.toJSON().map((result) => <Index key={result.factual_id} {...result}/>)}
+
+          </li>
             )
           })}
         </ul>
@@ -51,3 +58,5 @@ var Search = React.createClass({
     )
   }
 })
+
+export default Search;
