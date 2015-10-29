@@ -4,10 +4,18 @@ import Search from '../components/search';
 import store from '../store';
 import Backbone from 'backbone';
 import BackboneMixin from '../mixins/backbone';
+import $ from 'jquery';
+
 
 var Index = React.createClass({
 
   mixins: [BackboneMixin],
+
+  getInitialState (){
+    return {
+      isSearching: false
+    };
+  },
 
   getModels() {
     return {
@@ -15,6 +23,21 @@ var Index = React.createClass({
     }
   },
 
+
+  // handleSearch () {
+  //   this.setState ({
+  //     isSearching: this.State.isSearching
+  //   });
+  // },
+
+  toggleSearch() {
+    $(".fa-search").toggle();
+    $(".fa-times").toggle();
+    this.setState({
+      isSearching: !this.state.isSearching
+
+    })
+  },
   // componentWillMount() {
   //     this.state.restaurant.on('change', this.forceUpdate.bind(this, null), this);
   // },
@@ -27,6 +50,7 @@ var Index = React.createClass({
     e.preventDefault();
     let search = this.refs.search.value;
     store.searchRestaurants(search);
+  },
     // this.setState.restaurant = store.getRestaurantCollection([], this.refs.search);
     //   this.state.restaurant.fetch().then(
     //     ()=> {
@@ -35,24 +59,24 @@ var Index = React.createClass({
     //       })
     //     }
     //   )
-  },
+
+
+
+
 
 
   render() {
     return (
       <div>
-        <div className="top-nav">
-        <header>
-        <button className="settings-button"><i className="fa fa-cog"></i></button>
-        <img src="" alt="" />
-        <button className="search-button"><i className="fa fa-search"></i></button>
-        </header>
-      </div>
-      <div>
-        <h1>Search</h1>
         <form onSubmit={this.handleSubmit}>
-          <input className="searchbox" type="search" ref="search"/>
-        </form>
+        {this.state.isSearching && <input type="search" className="search-box" placeholder="Find Food and Friends..." ref="search" />}
+      </form>
+        <div className="top-nav">
+          <img src="" alt="" />
+            <button className="search-button" onClick={this.toggleSearch}><i className="fa fa-search"></i><i className="fa fa-times"></i></button>
+          </div>
+      <div>
+        <h1>Search Restaurants</h1>
             {this.state.restaurants.map((result) => <Index key={result.factual_id} {...result}/> )}
 
       </div>

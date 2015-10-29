@@ -43,7 +43,7 @@ render () {
   return (
     <div className="login-container">
       <Link to="/login"><button className="signup-back"><i className="fa fa-angle-left"></i></button></Link>
-    <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
       <input className="login-username loginsy" type="text" placeholder="Username" defaultValue={this.props.username} ref="username" />
       <input className="login-password loginsy" type="text" placeholder="Password" defaultValue={this.props.password} ref="password" />
       <button type="submit" className="submit-login"><i className="fa fa-angle-right"></i></button>
