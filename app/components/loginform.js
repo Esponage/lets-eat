@@ -42,8 +42,8 @@ const LoginForm = React.createClass({
 render () {
   return (
     <div className="login-container">
-    <form onSubmit={this.handleSubmit}>
       <Link to="/login"><button className="signup-back"><i className="fa fa-angle-left"></i></button></Link>
+      <form onSubmit={this.handleSubmit}>
       <input className="login-username loginsy" type="text" placeholder="Username" defaultValue={this.props.username} ref="username" />
       <input className="login-password loginsy" type="text" placeholder="Password" defaultValue={this.props.password} ref="password" />
       <button className="submit-login"><i className="fa fa-angle-right"></i></button>

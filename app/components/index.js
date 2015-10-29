@@ -1,15 +1,16 @@
 import React from 'react';
 import {Route, RouteHandler, Link} from 'react-router';
+import $ from 'jquery';
 
 
 var Index = React.createClass({
+
 
   render() {
     return (
       <div>
         <div className="top-nav">
         <header>
-        <button className="settings-button"><i className="fa fa-cog"></i></button>
         <img src="" alt="" />
         <button className="search-button"><i className="fa fa-search"></i></button>
         </header>
