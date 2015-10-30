@@ -25,7 +25,7 @@ var Favorites = React.createClass ({
 render() {
   return (
     <div>
-      {this.state.isSearching && <input type="search" className="search-box" onSubmit={this.handleSearch} />}
+      {this.state.isSearching && <input type="search" className="search-box" placeholder="Find Food and Friends..." onSubmit={this.handleSearch} />}
 
       <div className="top-nav">
         <img src="" alt="" />

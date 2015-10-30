@@ -8,6 +8,9 @@ var Deals = React.createClass ({
   render() {
     return (
       <div>
+        <div className="top-nav">
+          <img src="" alt="" />
+          </div>
       <div>
         <h1>Deals</h1>
       </div>

@@ -23,49 +23,21 @@ var Index = React.createClass({
     }
   },
 
-
-  // handleSearch () {
-  //   this.setState ({
-  //     isSearching: this.State.isSearching
-  //   });
-  // },
-
   toggleSearch() {
-    $(".fa-search").toggle();
-    $(".fa-times").toggle();
     this.setState({
       isSearching: !this.state.isSearching
 
     })
   },
-  // componentWillMount() {
-  //     this.state.restaurant.on('change', this.forceUpdate.bind(this, null), this);
-  // },
-  //
-  // componentWillUnmount() {
-  //     this.state.restaurant.off('change', null, this);
-  // },
 
   handleSubmit(e) {
     e.preventDefault();
     let search = this.refs.search.value;
     store.searchRestaurants(search);
   },
-    // this.setState.restaurant = store.getRestaurantCollection([], this.refs.search);
-    //   this.state.restaurant.fetch().then(
-    //     ()=> {
-    //       this.setState({
-    //         restaurant: this.state.restaurant
-    //       })
-    //     }
-    //   )
-
-
-
-
-
 
   render() {
+    var searchClass = this.state.isSearching ? 'fa-times' : 'fa-search';
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -73,15 +45,15 @@ var Index = React.createClass({
       </form>
         <div className="top-nav">
           <img src="" alt="" />
-            <button className="search-button" onClick={this.toggleSearch}><i className="fa fa-search"></i><i className="fa fa-times"></i></button>
+            <button className="search-button" onClick={this.toggleSearch}><i className={"fa " + searchClass}></i></button>
           </div>
       <div>
         <h1>Search Restaurants</h1>
-            {this.state.restaurants.map((result) => <Index key={result.factual_id} {...result}/> )}
-
+          <ul>
+            {this.state.restaurants.map((result) => <li key={result.factual_id}>{result.name}</li> )}
+          </ul>
       </div>
-
-        <div className="row">
+        <div>
           <footer>
             <nav className="dashboard-nav">
               <Link to="/deals"><button className="dashboard-nav-buttons1"><i className="fa fa-tag"></i></button></Link>

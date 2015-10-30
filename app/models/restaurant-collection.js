@@ -12,7 +12,7 @@ var RestaurantCollection = Backbone.Collection.extend({
   },
 
   parse(response) {
-    return response.data;
+    return response.response.data;
   }
 
 });
