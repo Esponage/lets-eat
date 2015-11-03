@@ -4,7 +4,6 @@
 @import '~font-awesome/scss/font-awesome.scss';
 @import 'foundation';
 
-// buttons
 .vid-div::before {
     content: "";
     display: block;
@@ -28,267 +27,52 @@
   z-index: -100;
   visibility: visible;
 }
-
-.log-buttons > li {
-  list-style: none;
-}
-
 .log-buttons {
   display: block;
 }
-
-.log-buttons > li {
-  list-style: none;
-}
-.log-buttons {
-  display: block;
-}
-
-.go-button,
-.go-button2 {
+.go-button {
   background-color: rgba(0, 112, 149, .8);
-  width: 200px;
+  width: 100%;
   height: 60px;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  font-family: "Courgette";
-  font-family: "Poriet One";
   font-family: "Poiret One";
   font-size: 1.5rem;
   margin: auto;
-  margin-bottom: 10px;
   display: table-cell;
-  vertical-align: middle;
-}
-
-.go-button {
+  vertical-align: bottom;
   position: fixed;
-  top: 350px;
-  left: 95px;
+  bottom: 0;
+  left: 0;
 }
-
 .go-button2 {
-  position: fixed;
-  top: 275px;
-  left: 95px;
-}
-
-input.signup-first,
-input.signup-last,
-input.login-username,
-input.login-password,
-input.signup-email,
-input.signup-username,
-input.signup-password {
-  max-width: 300px;
-  margin-top: 5px;
-  margin: 0 auto;
-  box-shadow: none;
-  border: none;
-  // background-color: rgba(222, 62, 61, .5);
-  border-bottom: 1px solid rgba(222, 62, 61, 1);
-  margin-bottom: 20px;
-  vertical-align: middle;
-  color: black;
-  font-family: "Poiret One";
-  position: relative;
-  top: 50%;
-  transform: translateY(500%);
-  &:focus {
-    background: transparent;
-    border-bottom: 1px solid rgba(222, 62, 61, 1);
-  }
-}
-.submit-login,
-.signup-login {
-  background-color: rgba(222, 62, 61, .8);
+  background-color: rgba(0, 112, 149, .8);
   width: 100%;
-  height: 80px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  // border-top-left-radius: 50px;
-  // border-bottom-left-radius: 50px;
-  // border-top-right-radius: 50px;
-  // border-bottom-right-radius: 50px;
+  height: 60px;
   font-family: "Poiret One";
-  font-size: 1.2rem;
-  padding: 5px;
-  margin: 0;
-}
-.fa-angle-right {
-  font-size: 2.5rem;
-}
-
-input.signup-first,
-input.signup-last,
-input.signup-email,
-input.signup-username,
-input.signup-password {
-  border-bottom: 1px solid rgba(222, 62, 61, 1);
-  margin-bottom: 20px;
-  vertical-align: middle;
-  color: black;
-  font-family: "Poiret One";
-  font-weight: bold;
-  position: relative;
-  top: 50%;
-  transform: translateY(350%);
-
-  &:focus {
-    background: transparent;
-    border-bottom: 1px solid rgba(222, 62, 61, 1);
-  }
-}
-
-.signup-back {
-  background: transparent;
-  width: 20px;
+  font-size: 1.5rem;
+  margin: auto;
+  display: table-cell;
+  vertical-align: bottom;
   position: fixed;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  top: 10px;
-  left: 10px;
-  box-shadow: none;
-  border: none;
-  outline: none;
-
-  &:focus,
-  &:active,
-  &:hover {
-    background: transparent;
-    color: transparent;
-    box-shadow: none;
-  }
-}
-
-.fa-angle-left {
-  color: rgba(222, 62, 61, .8);
-  font-size: 2rem;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-}
-
-.settings-button {
-  margin-bottom: 0;
-}
-
-.dashboard-nav {
-  position: fixed;
-  bottom: 0;
+  bottom: 65px;
   left: 0;
-  background-color: rgba(222, 62, 61, .8);
-
-
 }
-
-.dashboard-nav-buttons1,
-.dashboard-nav-buttons2,
-.dashboard-nav-buttons3,
-.dashboard-nav-buttons4,
-.dashboard-nav-buttons5 {
-  width: 20%;
-  background-color: rgba(222, 62, 61, .8);
-  background: transparent;
-  margin-bottom: 0;
-
-  &:active,
-  &:focus,
-  &:hover {
-    background: transparent;
-    background-color: rgba(224, 71, 69, 1);
-  }
-}
-
-.fa-tag,
-.fa-map-marker,
-.fa-home,
-.fa-thumbs-o-up,
-.fa-user {
-  font-size: 1.2rem;
-}
-
-.fa-map-marker,
-.fa-home,
-.fa-thumbs-o-up {
-  position: relative;
-  top: 0;
-  right: 4px;
-}
-
-.fa-map-marker {
-  position: relative;
-  top: 0;
-  left: 1px;
-}
-
-.fa-thumbs-o-up {
-  position: relative;
-  top: 0;
-  right: 1px;
-}
-
-.search-button {
-  position: absolute;
-  // top: 0;
-  right: 0;
-  height: 50px;
-  background-color: rgba(222, 62, 61, .8);
-  background: transparent;
-  background-color: transparent;
-  width: 5%;
-
-  &:active,
-  &:focus,
-  &:hover {
-    background: transparent;
-    background-color: transparent;
-    box-shadow: none;
-  }
-}
-
-// .settings-button {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   height: 50px;
-//   background-color: rgba(222, 62, 61, .8);
-//   background: transparent;
-//
-//   &:active,
-//   &:focus,
-//   &:hover {
-//     background: transparent;
-//     background-color: transparent;
-//   }
-// }
-
 .top-nav {
   max-width: 100%;
   height: 50px;
   background-color: rgba(222, 62, 61, .8);
 }
-
-
 .fa-search {
   font-size: 1.3rem;
   position: absolute;
   top: 13px;
   left: 20px;
 }
-
 .fa-times {
   font-size: 1.3rem;
   position: absolute;
   top: 13px;
   left: 20px;
 }
-
 input.search-box {
   width: 78%;
   position: absolute;
@@ -296,7 +80,6 @@ input.search-box {
   left: 0;
   box-shadow: none;
   border: none;
-  // border-bottom: 1px solid white;
   background-color: white;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;

@@ -44,26 +44,15 @@ var Index = React.createClass({
         {this.state.isSearching && <input type="search" className="search-box" placeholder="Find Food and Friends..." ref="search" />}
       </form>
         <div className="top-nav">
+          <button className="hamburger"><i className="fa fa-bars"></i></button>
           <img src="" alt="" />
-            <button className="search-button" onClick={this.toggleSearch}><i className={"fa " + searchClass}></i></button>
+          <button className="search-button" onClick={this.toggleSearch}><i className={"fa " + searchClass}></i></button>
           </div>
-      <div>
-        <h1>Search Restaurants</h1>
-          <ul>
-            {this.state.restaurants.map((result) => <li key={result.factual_id}>{result.name}</li> )}
+      <div className="is-searching not-searching">
+          <ul className="search-results-ul">
+            {this.state.restaurants.map((result) => <li className="search-results" key={result.factual_id}>{result.name}</li> )}
           </ul>
       </div>
-        <div>
-          <footer>
-            <nav className="dashboard-nav">
-              <Link to="/deals"><button className="dashboard-nav-buttons1"><i className="fa fa-tag"></i></button></Link>
-              <Link to="/location"><button className="dashboard-nav-buttons2"><i className="fa fa-map-marker"></i></button></Link>
-              <Link to="/index"><button className="dashboard-nav-buttons3"><i className="fa fa-home"></i></button></Link>
-              <Link to="/favorites"><button className="dashboard-nav-buttons4"><i className="fa fa-thumbs-o-up"></i></button></Link>
-              <Link to="/profile"><button className="dashboard-nav-buttons5"><i className="fa fa-user"></i></button></Link>
-            </nav>
-          </footer>
-        </div>
       </div>
     );
   }
