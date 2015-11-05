@@ -9,7 +9,15 @@ import $ from 'jquery';
 
 var Profile = React.createClass ({
 
-
+  logOut: function() {
+    FB.getLoginStatus(function(response) {
+        if (response && response.status === 'connected') {
+            FB.logout(function(response) {
+                document.location.reload();
+            });
+        }
+    });
+  },
 
   render (){
     return (

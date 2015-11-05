@@ -49,7 +49,7 @@ var Search = React.createClass({
           </div>
       <div className="is-searching not-searching">
           <ul className="search-results-ul">
-            {this.state.restaurants.map((result) => <li className="search-results" key={result.place_id}>{result.photos_url}</li> )}
+            {this.state.restaurants.map((result) => <li className="search-results" key={result.restaurant.R.res_id}><img src={result.restaurant.featured_image || result.restaurant.thumbnail} />{result.restaurant.name} {result.restaurant.location.address}</li> )}
           </ul>
       </div>
       </div>
