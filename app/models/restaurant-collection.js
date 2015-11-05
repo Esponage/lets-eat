@@ -1,19 +1,29 @@
 import Backbone from 'backbone';
 import store from '../store';
+import $ from 'jquery';
+import '../jsonpproxy.js';
 
 var RestaurantCollection = Backbone.Collection.extend({
-  url() {
-    return 'http://api.v3.factual.com/t/restaurants-us?q='
-    + this.search + "&KEY=8nt8qQk9ES7pAAYigH2rkZvFayaTKIDpUe5W2EWI"
-  },
+ url() {
+   // return "https://jsonp.afeld.me/?url=" + encodeURIComponent("https://maps.googleapis.com/maps/api/place/textsearch/json?query=" + this.search + "&key=AIzaSyC-Q2PvTSqrIoZpPWF9rlTcDoIJtxVZQcM&libraries=places");
+     return "https://developers.zomato.com/api/v2.1/restaurant?q=" + this.search;
+ },
 
-  setSearch(search) {
-    this.search = search;
-  },
+ sync() {
+   return $.jsonp({
+     url: this.url(),
+   });
+ },
 
-  parse(response) {
-    return response.response.data;
-  }
+
+ setSearch(search) {
+   this.search = search;
+ },
+
+ parse(response) {
+   console.log(response);
+   return response.R;
+ }
 
 });
 

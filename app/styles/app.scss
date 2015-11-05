@@ -42,65 +42,197 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  margin-bottom: 0;
 }
-.go-button2 {
-  background-color: rgba(0, 112, 149, .8);
+
+.top-nav {
+  max-width: 100%;
+  height: 50px;
+  background-color: rgba(252, 252, 252, 1);
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+}
+
+.fa-search {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: rgba(222, 62, 61, .8);
+}
+
+.search-button {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-bottom: 0;
+  background: transparent;
+
+    &:focus,
+    &:hover,
+    &active {
+      background: transparent;
+    }
+}
+
+.profile-button {
+  height: 50px;
+  width: 1px;
+  margin-bottom: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: transparent;
+
+  &:focus,
+  &:hover,
+  &active {
+    background: transparent;
+  }
+}
+
+.fa-user {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: rgba(222, 62, 61, .8);
+}
+
+.randomize-button {
+  background: rgba(222, 62, 61, .8);
+  width: 15%;
+  height:0;
+  padding-bottom: 12%;
+  border-radius: 50%;
+  overflow:hidden;
+  position: fixed;
+  left: 41%;
+  bottom: 1%;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: transparent;
+    background-color: rgba(222, 62, 61, .8);
+
+  }
+}
+
+// .container {
+//   background-color: rgba(222, 62, 61, .4);
+// }
+
+.profile-header {
+  height: 125px;
+  border-bottom: 2px solid rgba(230, 230, 230, 1);
+  background-color: white;
+}
+
+.favorites-section {
+  height: 50px;
+  border-top: 1px solid rgba(230, 230, 230, 1);
+  border-bottom: 1px solid rgba(230, 230, 230, 1);
+  margin-top: 40px;
+  background-color: white;
+}
+
+.profile-pic {
+  background-repeat: no-repeat;
+   background-position: 50%;
+   border-radius: 50%;
+   width: 80px;
+   height: 80px;
+   border: 2px solid rgba(222, 62, 61, .8);
+   position: absolute;
+   top: 1%;
+   left: 40%;
+}
+
+.profile-name {
+  font-family: "Poiret One";
+  font-size: 1.1rem;
+  font-weight: bolder;
+  text-align: center;
+  color: rgba(222, 62, 61, .8);
+  vertical-align: bottom;
+  position: relative;
+  top: 25%;
+  left: 1%;
+}
+
+.back-button {
+  width: 1em;
+  height: 1em;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: transparent;
+    background-color: transparent;
+  }
+}
+
+.fa-times {
+  color: rgba(222, 62, 61, .8);
+  font-size: 1.4rem;
+  position: absolute;
+  top: 5px;
+  left: 1px;
+}
+
+.sign-out-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  background-color: rgba(222, 62, 61, .8);
   width: 100%;
   height: 60px;
   font-family: "Poiret One";
   font-size: 1.5rem;
-  margin: auto;
-  display: table-cell;
-  vertical-align: bottom;
-  position: fixed;
-  bottom: 65px;
-  left: 0;
-}
-.top-nav {
-  max-width: 100%;
-  height: 50px;
-  background-color: rgba(222, 62, 61, .8);
-}
-.fa-search {
-  font-size: 1.3rem;
-  position: absolute;
-  top: 13px;
-  left: 20px;
-}
-.fa-times {
-  font-size: 1.3rem;
-  position: absolute;
-  top: 13px;
-  left: 20px;
-}
-input.search-box {
-  width: 78%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-shadow: none;
-  border: none;
-  background-color: white;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  color: black;
-  margin-left: 10px;
-  margin-top: 5px;
-  overflow: hidden;
-  margin-top: 6px;
-  -webkit-transition: width 0.3s;
-  -moz-transition: width 0.3s;
-  -ms-transition: width 0.3s;
-  -o-transition: width 0.3s;
-  transition: width 0.3s;
-  &:focus {
-    background-color: white;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    color: rgba(128, 128, 128, 1);
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: transparent;
+    background-color: rgba(222, 62, 61, .8);
+
   }
 }
+
+
+
+
+// }
+// input.search-box {
+//   width: 78%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   box-shadow: none;
+//   border: none;
+//   background-color: white;
+//   border-bottom-right-radius: 10px;
+//   border-bottom-left-radius: 10px;
+//   border-top-right-radius: 10px;
+//   border-top-left-radius: 10px;
+//   color: black;
+//   margin-left: 10px;
+//   margin-top: 5px;
+//   overflow: hidden;
+//   margin-top: 6px;
+//   -webkit-transition: width 0.3s;
+//   -moz-transition: width 0.3s;
+//   -ms-transition: width 0.3s;
+//   -o-transition: width 0.3s;
+//   transition: width 0.3s;
+//   &:focus {
+//     background-color: white;
+//     border-bottom-right-radius: 10px;
+//     border-bottom-left-radius: 10px;
+//     border-top-right-radius: 10px;
+//     border-top-left-radius: 10px;
+//     color: rgba(128, 128, 128, 1);
+//   }
+// }

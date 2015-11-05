@@ -1,62 +1,60 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {Route, RouteHandler, Link} from 'react-router';
 import store from '../store';
-import Index from '../components/index';
+import Backbone from 'backbone';
+import BackboneMixin from '../mixins/backbone';
+import $ from 'jquery';
+
 
 var Search = React.createClass({
 
-  getInitialState() {
+  mixins: [BackboneMixin],
+
+  getInitialState (){
     return {
-      restaurant: store.getRestaurantCollection()
-    }
+      isSearching: false
+    };
   },
 
-  componentWillMount() {
-      this.state.restaurant.on('change', this.forceUpdate.bind(this, null), this);
+  getModels() {
+    return {
+      restaurants: store.getRestaurants()
+    };
   },
 
-  componentWillUnmount() {
-      this.state.restaurant.off('change', null, this);
+  toggleSearch() {
+    this.setState({
+      isSearching: !this.state.isSearching
+
+    });
   },
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState.restaurant = store.getRestaurantCollection([], this.refs.search.value);
-      this.state.restaurant.fetch().then(
-        ()=> {
-          this.setState({
-            restaurant: this.state.restaurant
-          })
-        }
-      )
+    let search = this.refs.search.value;
+    store.searchRestaurants(search);
   },
 
   render() {
+    var searchClass = this.state.isSearching ? 'fa-times' : 'fa-search';
     return (
       <div>
-        <h1>Search</h1>
         <form onSubmit={this.handleSubmit}>
-          <input
-              type="search"
-              value={this.state.search}
-              onChange={this.handleChange}
-            />
-        </form>
-
-        <input type="search" />
-        })}
-
-        <ul>
-          <li>
-            {this.state.restaurant.toJSON().map((result) => <Index key={result.factual_id} {...result}/>)}
-
-          </li>
-            )
-          })}
-        </ul>
+        {this.state.isSearching && <input type="search" className="search-box" placeholder="Find Food and Friends..." ref="search" />}
+      </form>
+        <div className="top-nav">
+          <button className="hamburger"><i className="fa fa-bars"></i></button>
+          <img src="" alt="" />
+          <button className="search-button" onClick={this.toggleSearch}><i className={"fa " + searchClass}></i></button>
+          </div>
+      <div className="is-searching not-searching">
+          <ul className="search-results-ul">
+            {this.state.restaurants.map((result) => <li className="search-results" key={result.place_id}>{result.photos_url}</li> )}
+          </ul>
       </div>
-    )
+      </div>
+    );
   }
-})
+});
 
 export default Search;

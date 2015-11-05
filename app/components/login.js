@@ -1,8 +1,11 @@
 import React from 'react';
-import {Route, RouteHandler, Link} from 'react-router';
+import {History, Route, RouteHandler, Link} from 'react-router';
+import store from '../store';
 
 
 var Login = React.createClass({
+
+  mixins: [ History ],
 
   componentDidMount: function() {
     window.fbAsyncInit = function() {
@@ -40,14 +43,25 @@ var Login = React.createClass({
     }(document, 'script', 'facebook-jssdk'));
   },
 
-  // Here we run a very simple test of the Graph API after login is
-// successful.  See statusChangeCallback() for when this call is made.
-testAPI: function() {
-  console.log('Welcome!  Fetching your information.... ');
+handleLogin: function(authData) {
+  var { location } = this.props;
   FB.api('/me', function(response) {
-  console.log('Successful login for: ' + response.name);
-  document.getElementById('status').innerHTML =
-    'Thanks for logging in, ' + response.name + '!';
+    console.log(response);
+    var expiration = new Date();
+    expiration.setTime(authData.expiresIn * 1000);
+    var userData = {
+      name: response.name,
+      authData: {
+        facebook: {
+          id: authData.userID,
+          access_token: authData.accessToken,
+          expiration_date: expiration
+        }
+      }
+    };
+    store.getSession().authenticate(userData).then((loggedIn) => {
+      this.history.replaceState({}, '/index');
+    });
   });
 },
 
@@ -55,13 +69,14 @@ testAPI: function() {
 statusChangeCallback: function(response) {
   console.log('statusChangeCallback');
   console.log(response);
+
   // The response object is returned with a status field that lets the
   // app know the current login status of the person.
   // Full docs on the response object can be found in the documentation
   // for FB.getLoginStatus().
   if (response.status === 'connected') {
     // Logged into your app and Facebook.
-    this.testAPI();
+    this.handleLogin(response.authResponse);
   } else if (response.status === 'not_authorized') {
     // The person is logged into Facebook, but not your app.
     document.getElementById('status').innerHTML = 'Please log ' +
@@ -85,6 +100,16 @@ checkLoginState: function() {
 
 handleClick: function() {
   FB.login(this.checkLoginState());
+},
+
+logOut: function fbLogoutUser() {
+  FB.getLoginStatus(function(response) {
+      if (response && response.status === 'connected') {
+          FB.logout(function(response) {
+              document.location.reload();
+          });
+      }
+  });
 },
 
   render(){

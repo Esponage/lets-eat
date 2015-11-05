@@ -1,20 +1,19 @@
-import $ from 'jquery'
+import $ from 'jquery';
 import Backbone from 'backbone';
 import User from './user';
 
 const Session = Backbone.Model.extend({
   authenticate(options) {
-      if (options.username && options.password) {
+      // using facebook authData
+      if (options.authData) {
         return $.ajax({
-          url: "https://api.parse.com/1/login",
-          data: {
-            username: options.username,
-            password: options.password
-          }
+          url: "https://api.parse.com/1/users",
+          type: "POST",
+          contentType: "application/json; charset=utf-8",
+          data: JSON.stringify(options)
         }).then((response) => {
           this.set('currentUser', new User(response));
           localStorage.setItem('parse-session-token', response.sessionToken);
-          this.trigger('authenticationSucceeded');
           return true;
         }, () => false);
       } else if (options.sessionToken) {
@@ -22,7 +21,6 @@ const Session = Backbone.Model.extend({
         localStorage.setItem('parse-session-token', options.sessionToken);
         var user = new User(options);
         this.set('currentUser', user);
-        this.trigger('authenticationSucceeded');
         return user.fetch().then(() => {
           this.set('currentUser', user.clone());
           return true;
