@@ -27,9 +27,12 @@ var Profile = React.createClass ({
         </header>
       </div>
         <div className="tab-container">
-          <button className="favorites-button">Fav</button>
-          <button className="deals-button">De</button>
-          <button className="invites-button">In</button>
+          <ul>
+            <li className="fa-star"></li>
+            <li className="fa-credit-card"></li>
+            <li className="fa-user-plus"></li>
+            <li className="fa-location-arrow"></li>
+          </ul>
         </div>
         <div>
             <button className="sign-out-button" type="button" name="button" onClick={this.logOut}>Sign Out</button>
