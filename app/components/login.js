@@ -102,15 +102,6 @@ handleClick: function() {
   FB.login(this.checkLoginState());
 },
 
-logOut: function fbLogoutUser() {
-  FB.getLoginStatus(function(response) {
-      if (response && response.status === 'connected') {
-          FB.logout(function(response) {
-              document.location.reload();
-          });
-      }
-  });
-},
 
   render(){
     return (
