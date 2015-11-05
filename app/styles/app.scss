@@ -1,5 +1,7 @@
-// @import 'bourbon';
-// @import 'neat';
+@import 'bourbon';
+$visual-grid: true;
+@import 'neat';
+
 @import '~normalize.css/normalize.css';
 @import '~font-awesome/scss/font-awesome.scss';
 @import 'foundation';
@@ -123,19 +125,20 @@
 //   background-color: rgba(222, 62, 61, .4);
 // }
 
+
 .profile-header {
   height: 125px;
   border-bottom: 2px solid rgba(230, 230, 230, 1);
   background-color: white;
 }
 
-.favorites-section {
-  height: 50px;
-  border-top: 1px solid rgba(230, 230, 230, 1);
-  border-bottom: 1px solid rgba(230, 230, 230, 1);
-  margin-top: 40px;
-  background-color: white;
-}
+// .favorites-section {
+//   height: 50px;
+//   border-top: 1px solid rgba(230, 230, 230, 1);
+//   border-bottom: 1px solid rgba(230, 230, 230, 1);
+//   margin-top: 40px;
+//   background-color: white;
+// }
 
 .profile-pic {
   background-repeat: no-repeat;
@@ -162,6 +165,8 @@
 }
 
 .back-button {
+  background: transparent;
+  background-color: white;
   width: 1em;
   height: 1em;
 
@@ -178,13 +183,14 @@
   font-size: 1.4rem;
   position: absolute;
   top: 5px;
-  left: 1px;
+  left: 15px;
 }
 
 .sign-out-button {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
+  right: 0;
   margin-bottom: 0;
   background-color: rgba(222, 62, 61, .8);
   width: 100%;
@@ -197,11 +203,123 @@
   &:active {
     background: transparent;
     background-color: rgba(222, 62, 61, .8);
+  }
+}
+
+.favorites-button {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  border: 2px solid rgba(222, 62, 61, .8);
+  position: fixed;
+  top: 25%;
+  left: 17%;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: transparent;
+    background-color: rgba(222, 62, 61, .8);
 
   }
 }
 
+.deals-button {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  border: 2px solid rgba(222, 62, 61, .8);
+  position: fixed;
+   top: 25%;
+   left: 63%;
 
+  &:focus,
+  &:hover,
+  &:active {
+    background: transparent;
+    background-color: rgba(222, 62, 61, .8);
+  }
+}
+
+.invites-button {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  border: 2px solid rgba(222, 62, 61, .8);
+  position: fixed;
+  top: 45%;
+  left: 17%;
+
+&:focus,
+&:hover,
+&:active {
+  background: transparent;
+  background-color: rgba(222, 62, 61, .8);
+  }
+}
+
+.location-button {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgba(222, 62, 61, .8);
+  position: relative;
+  //  top: 1%;
+  //  left: 40%;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: transparent;
+    background-color: rgba(222, 62, 61, .8);
+  }
+}
+
+.about-button {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgba(222, 62, 61, .8);
+  position: relative;
+  //  top: 1%;
+  //  left: 40%;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: transparent;
+    background-color: rgba(222, 62, 61, .8);
+  }
+}
+
+.contact-button {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  border: 2px solid rgba(222, 62, 61, .8);
+  position: relative;
+  //  top: 1%;
+  //  left: 40%;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background: transparent;
+    background-color: rgba(222, 62, 61, .8);
+  }
+}
 
 
 // }
