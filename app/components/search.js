@@ -35,7 +35,8 @@ var Search = React.createClass({
         </div>
         <div className="is-searching not-searching">
           <ul className="search-results-ul">
-            {this.state.restaurants.map((result) => <div key={result.restaurant.R.res_id}><li className="search-results">{result.restaurant.name}</li> <li>{result.restaurant.cuisines}</li><li>Average Cost for two: {result.restaurant.currency}{result.restaurant.average_cost_for_two}</li><li>{result.restaurant.location.city}</li><li>{result.restaurant.user_rating.aggregate_rating}</li></div> )}
+            {this.state.restaurants.map((result) => <div className="search-results" key={result.restaurant.R.res_id}><li className="r-name">{result.restaurant.name}</li> <li className="r-cuisine">{result.restaurant.cuisines}</li><li className="r-cost">{result.restaurant.currency}{result.restaurant.average_cost_for_two}</li>
+          <li className="r-location">{result.restaurant.location.city}</li><li className="r-rating">{result.restaurant.user_rating.aggregate_rating}</li><li><img src={result.restaurant.featured_image} /></li></div> )}
           </ul>
       </div>
       </div>
