@@ -12,7 +12,7 @@ var Index = React.createClass({
   render (){
     return (
       <div>
-        <nav className="top-nav">
+        <nav className="top-nav2">
           <Link to="/profile"><button className="profile-button"><i className="fa fa-user"></i></button></Link>
           <Link to="/search"><button className="search-button"><i className="fa fa-search"></i></button></Link>
         </nav>

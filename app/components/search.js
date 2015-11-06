@@ -10,23 +10,10 @@ var Search = React.createClass({
 
   mixins: [BackboneMixin],
 
-  getInitialState (){
-    return {
-      isSearching: false
-    };
-  },
-
   getModels() {
     return {
       restaurants: store.getRestaurants()
     };
-  },
-
-  toggleSearch() {
-    this.setState({
-      isSearching: !this.state.isSearching
-
-    });
   },
 
   handleSubmit(e) {
@@ -36,18 +23,17 @@ var Search = React.createClass({
   },
 
   render() {
-    var searchClass = this.state.isSearching ? 'fa-times' : 'fa-search';
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-        {this.state.isSearching && <input type="search" className="search-box" placeholder="Find Food and Friends..." ref="search" />}
-      </form>
-        <div className="top-nav">
-          <button className="hamburger"><i className="fa fa-bars"></i></button>
-          <img src="" alt="" />
-          <button className="search-button" onClick={this.toggleSearch}><i className={"fa " + searchClass}></i></button>
-          </div>
-      <div className="is-searching not-searching">
+        <div>
+          <form className="top-nav" onSubmit={this.handleSubmit}>
+            <input type="search" className="search-box" placeholder="Find Food and Friends..." ref="search" />
+          </form>
+        </div>
+        <div>
+          <Link to="/index"><button className="x-button"><i className="fa fa-times search-x"></i></button></Link>
+        </div>
+        <div className="is-searching not-searching">
           <ul className="search-results-ul">
             {this.state.restaurants.map((result) => <li className="search-results" key={result.restaurant.R.res_id}><img src={result.restaurant.featured_image || result.restaurant.thumbnail} />{result.restaurant.name} {result.restaurant.location.address}</li> )}
           </ul>
