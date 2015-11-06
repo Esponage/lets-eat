@@ -9,6 +9,10 @@ import $ from 'jquery';
 
 var Index = React.createClass({
 
+componentWillMount() {
+
+},
+
   render (){
     return (
       <div>
