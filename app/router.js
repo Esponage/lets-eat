@@ -11,8 +11,6 @@ import Profile from './components/profile';
 import store from './store';
 
 function requireAuth(nextState, replaceState) {
-  console.log('requireAuth');
-  console.log(store.getSession());
   if( ! store.getSession().isAuthenticated() ) {
     replaceState({ nextPathname: nextState.location.pathname }, '/login');
   }
