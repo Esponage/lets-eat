@@ -21,15 +21,18 @@ var Profile = React.createClass ({
       <div>
       <div>
         <header className="profile-header">
-          <button className="back-button"><i className="fa fa-times"></i></button>
+          <Link to="/index"><button className="back-button"><i className="fa fa-times"></i></button></Link>
           <img className="profile-pic" src="https://pbs.twimg.com/profile_images/659358689132957696/VUuMaLOq.jpg" alt="profile picture" />
           <h1 className="profile-name">Anthony Bluemmel</h1>
         </header>
       </div>
         <div className="tab-container">
-          <button className="favorites-button">Fav</button>
-          <button className="deals-button">De</button>
-          <button className="invites-button">In</button>
+          <ul className="circle-list">
+            <li className="fa-star circles"></li>
+            <li className="fa-credit-card circles2"></li>
+            <li className="fa-user-plus circles3"></li>
+            <li className="fa-location-arrow circles4"></li>
+          </ul>
         </div>
         <div>
             <button className="sign-out-button" type="button" name="button" onClick={this.logOut}>Sign Out</button>
