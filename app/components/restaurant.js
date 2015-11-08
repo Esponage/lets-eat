@@ -4,9 +4,10 @@ import store from '../store';
 import Backbone from 'backbone';
 import BackboneMixin from '../mixins/backbone';
 import $ from 'jquery';
+import _ from 'underscore';
 
 
-var Search = React.createClass({
+var Restaurant = React.createClass({
 
   mixins: [BackboneMixin],
 
@@ -20,11 +21,22 @@ var Search = React.createClass({
     e.preventDefault();
     let search = this.refs.search.value;
     store.searchRestaurants(search);
+    console.log(search);
+
+  },
+
+  randomizeRestaurant(e) {
+    e.preventDefault();
+    var sample = _.sample(this.state.restaurants);
+    console.log(sample);
   },
 
   render() {
     return (
       <div>
+
+        <button onClick={this.randomizeRestaurant}>Submit</button>
+
         <div>
           <form className="top-nav" onSubmit={this.handleSubmit}>
             <input type="search" className="search-box" placeholder="Find Food and Friends..." ref="search" />
@@ -35,7 +47,8 @@ var Search = React.createClass({
         </div>
         <div className="is-searching not-searching">
           <ul className="search-results-ul">
-            {this.state.restaurants.map((result) => <div key={result.restaurant.R.res_id}><li className="search-results">{result.restaurant.name}</li> <li>{result.restaurant.cuisines}</li><li>Average Cost for two: {result.restaurant.currency}{result.restaurant.average_cost_for_two}</li><li>{result.restaurant.location.city}</li> <li>{result.restaurant.user_rating.aggregate_rating}</li></div> )}
+            {this.state.restaurants.map((result) => <div key={result.restaurant.R.res_id}><img src={result.restaurant.featured_image}/><li className="search-results">{result.restaurant.name}</li> <li>{result.restaurant.cuisines}</li><li>{result.restaurant.currency}{result.restaurant.average_cost_for_two}</li><li>{result.restaurant.location.city}</li>
+          <li>{result.restaurant.user_rating.aggregate_rating}</li>  </div> )}
           </ul>
       </div>
       </div>
@@ -43,4 +56,4 @@ var Search = React.createClass({
   }
 });
 
-export default Search;
+export default Restaurant;

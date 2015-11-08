@@ -9,8 +9,26 @@ import $ from 'jquery';
 
 var Index = React.createClass({
 
-componentWillMount() {
+mixins: [BackboneMixin],
 
+getModels() {
+  return {
+    restaurants: store.getRestaurants()
+  };
+},
+
+handleSubmit(e) {
+  e.preventDefault();
+  let search = this.refs.search.value;
+  store.searchRestaurants(search);
+  console.log(search);
+
+},
+
+randomizeRestaurant(e) {
+  e.preventDefault();
+  var sample = _.sample(this.state.restaurants);
+  console.log(sample);
 },
 
   render (){
@@ -20,7 +38,7 @@ componentWillMount() {
           <Link to="/profile"><button className="profile-button"><i className="fa fa-user"></i></button></Link>
           <Link to="/search"><button className="search-button"><i className="fa fa-search"></i></button></Link>
         </nav>
-        <button className="randomize-button"></button>
+        <button onCLick="randomizeRestaurant" className="randomize-button"></button>
       </div>
     );
   }

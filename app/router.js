@@ -7,6 +7,7 @@ import Index from './components/index';
 import Login from './components/login';
 import Search from './components/search';
 import Profile from './components/profile';
+import Restaurant from './components/restaurant';
 
 import store from './store';
 
@@ -30,6 +31,7 @@ ReactDOM.render((
       <Route path="index" component={Index} onEnter={requireAuth} />
       <Route path="search" component={Search} onEnter={requireAuth} />
       <Route path="profile" component={Profile} onEnter={requireAuth} />
+      <Route path="restaurant" component={Restaurant} onEnter={requireAuth} />
     </Route>
   </Router>
 ), document.getElementById('application'));

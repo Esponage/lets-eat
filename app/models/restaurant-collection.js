@@ -1,4 +1,5 @@
 import Backbone from 'backbone';
+import _ from 'underscore';
 import store from '../store';
 import $ from 'jquery';
 import '../jsonpproxy.js';

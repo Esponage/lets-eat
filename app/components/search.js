@@ -4,6 +4,7 @@ import store from '../store';
 import Backbone from 'backbone';
 import BackboneMixin from '../mixins/backbone';
 import $ from 'jquery';
+import _ from 'underscore';
 
 
 var Search = React.createClass({
@@ -35,8 +36,8 @@ var Search = React.createClass({
         </div>
         <div className="is-searching not-searching">
           <ul className="search-results-ul">
-            {this.state.restaurants.map((result) => <div className="search-results" key={result.restaurant.R.res_id}><li className="r-name">{result.restaurant.name}</li> <li className="r-cuisine">{result.restaurant.cuisines}</li><li className="r-cost">{result.restaurant.currency}{result.restaurant.average_cost_for_two}</li>
-          <li className="r-location">{result.restaurant.location.city}</li><li className="r-rating">{result.restaurant.user_rating.aggregate_rating}</li><li><img src={result.restaurant.featured_image} /></li></div> )}
+            {this.state.restaurants.map((result) => <Link to="restaurant"><div className="search-results" key={result.restaurant.R.res_id}><li className="r-name">{result.restaurant.name}</li> <li className="r-cuisine">{result.restaurant.cuisines}</li><li className="r-cost">{result.restaurant.currency}{result.restaurant.average_cost_for_two}</li>
+          <li className="r-location">{result.restaurant.location.city}</li><li className="r-rating">{result.restaurant.user_rating.aggregate_rating}</li><li><img src={result.restaurant.featured_image} /></li></div> </Link>)}
           </ul>
       </div>
       </div>
