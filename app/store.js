@@ -49,7 +49,19 @@ var Store = _.extend({}, Backbone.Events, {
 
   getRestaurants() {
     return restaurants.toJSON();
-  }
+  },
+
+  getRestaurantView(res_id) {
+  let restaurantView = restaurants.get(res_id);
+   if(restaurantView) {
+     return restaurantView.toJSON();
+   }
+   else {
+     restaurantView.fetch();
+     return {};
+   }
+ }
+
 });
 
 Store.initialize();

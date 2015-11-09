@@ -35,10 +35,10 @@ var Search = React.createClass({
           <Link to="/index"><button className="x-button"><i className="fa fa-times search-x"></i></button></Link>
         </div>
         <div className="is-searching not-searching">
-          <ul className="search-results-ul">
+        <Link to={'/restaurant/${result.res_id'}> <ul className="search-results-ul">
             {this.state.restaurants.map((result) => <div className="search-results" key={result.restaurant.R.res_id}><li className="r-name">{result.restaurant.name}</li> <li className="r-cuisine">{result.restaurant.cuisines}</li><li className="r-cost">{result.restaurant.currency}{result.restaurant.average_cost_for_two}</li>
             <li className="r-location">{result.restaurant.location.city}</li><li className="r-rating">{result.restaurant.user_rating.aggregate_rating}</li><li className="r-address"><a className="fa fa-crosshairs" href=""></a></li></div> )}
-          </ul>
+          </ul> </Link>
       </div>
       </div>
     );
