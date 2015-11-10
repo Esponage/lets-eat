@@ -7,9 +7,26 @@ import $ from 'jquery';
 import _ from 'underscore';
 
 
+
 var Restaurant = React.createClass({
 
   mixins: [BackboneMixin],
+
+  getDefaultProps() {
+    return {
+      restaurant: store.getRestaurant(),
+    }
+  },
+
+  componentWillMount() {
+    this.props.restaurant.on('add change remove', this.forceUpdate.bind(this, null), this);
+    this.props.restaurant.setRestaurant(this.props.params.id)
+    this.props.restaurant.fetch()
+  },
+
+  componentWillUnmount() {
+    this.props.restaurant.off('add change remove', null, this);
+  },
 
   getModels() {
     return {
@@ -22,21 +39,13 @@ var Restaurant = React.createClass({
     let search = this.refs.search.value;
     store.searchRestaurants(search);
     console.log(search);
-
-  },
-
-  randomizeRestaurant(e) {
-    e.preventDefault();
-    var sample = _.sample(this.state.restaurants);
-    console.log(sample);
   },
 
   render() {
+    var restaurant = this.props.restaurant.toJSON()[0] || {};
+    console.log(restaurant);
     return (
       <div>
-
-        <button onClick={this.randomizeRestaurant}>Submit</button>
-
         <div>
           <form className="top-nav" onSubmit={this.handleSubmit}>
             <input type="search" className="search-box" placeholder="Find Food and Friends..." ref="search" />
@@ -45,12 +54,22 @@ var Restaurant = React.createClass({
         <div>
           <Link to="/index"><button className="x-button"><i className="fa fa-times search-x"></i></button></Link>
         </div>
-        <div className="is-searching not-searching">
-          <ul className="search-results-ul">
-            {this.state.restaurants.map((result) => <div key={result.restaurant.R.res_id}><img src={result.restaurant.featured_image}/><li className="search-results">{result.restaurant.name}</li> <li>{result.restaurant.cuisines}</li><li>{result.restaurant.currency}{result.restaurant.average_cost_for_two}</li><li>{result.restaurant.location.city}</li>
-          <li>{result.restaurant.user_rating.aggregate_rating}</li>  </div> )}
-          </ul>
-      </div>
+
+        <img src={restaurant.featured_image} />
+        <h1>{restaurant.name}</h1>
+        <h1>{restaurant.cuisines}</h1>
+        <h1>Cost for Two: {restaurant.currency}{restaurant.average_cost_for_two}</h1>
+        <h1>Average Rating: {restaurant.user_rating.aggregate_rating}</h1>
+        <h1>{restaurant.user_rating.rating_text}</h1>
+        <h1>{restaurant.user_rating.votes}</h1>
+        <h1>{restaurant.location.address}</h1>
+        <h1>{restaurant.location.city}</h1>
+        <h1>{restaurant.location.zipcode}</h1>
+
+
+
+
+
       </div>
     );
   }

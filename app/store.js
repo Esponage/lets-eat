@@ -7,6 +7,7 @@ import User from './models/user';
 import UserCollection from './models/user-collection';
 import CommentsCollection from './models/comment-collection';
 import RestaurantCollection from './models/restaurant-collection';
+import Restaurant from './models/restaurant';
 
 let session, users, comments;
 
@@ -17,6 +18,8 @@ let session, users, comments;
 // };
 //
 // searchResults();
+
+let restaurant = new Restaurant();
 
 let restaurants = new RestaurantCollection();
 
@@ -60,6 +63,10 @@ var Store = _.extend({}, Backbone.Events, {
      restaurantView.fetch();
      return {};
    }
+ },
+
+  getRestaurant() {
+   return restaurant;
  }
 
 });

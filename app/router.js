@@ -32,7 +32,7 @@ ReactDOM.render((
       <Route path="search" component={Search} onEnter={requireAuth} />
       <Route path="profile" component={Profile} onEnter={requireAuth} />
       <Route path="restaurant" component={Restaurant} onEnter={requireAuth} />
-      <Route path="restaurant/:result.res_id" component={Restaurant} onEnter={requireAuth} />
+      <Route path="restaurant/:id" component={Restaurant} onEnter={requireAuth} />
     </Route>
   </Router>
 ), document.getElementById('application'));
