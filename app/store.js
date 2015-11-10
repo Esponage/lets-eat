@@ -67,7 +67,14 @@ var Store = _.extend({}, Backbone.Events, {
 
   getRestaurant() {
    return restaurant;
- }
+ },
+
+ nextPage() {
+   restaurants.nextPage()
+   return restaurants.fetch().then(() => {
+     return restaurants.toJSON();
+   });
+  }
 
 });
 

@@ -25,8 +25,19 @@ var Search = React.createClass({
     store.searchRestaurants(search);
   },
 
+  buildElements: function(start, end) {
+       var elements = [];
+       for (var i = start; i < end; i++) {
+           elements.push(<Search key={i} index={i}/>)
+       }
+       return elements;
+   },
+
   nextPage() {
-      this.state.restaurants.nextPage();
+      store.nextPage().then((results) => {
+
+      });
+      console.log("hello");
   },
 
   render() {
@@ -40,7 +51,7 @@ var Search = React.createClass({
           <div>
             <Link to="/index"><button className="x-button"><i className="fa fa-times search-x"></i></button></Link>
           </div>
-          <Infinite containerHeight={5000} elementHeight={200} onInfiniteLoad={this.nextPage}>
+          <Infinite containerHeight={5000} elementHeight={200} infiniteLoadBeginEdgeOffset={window.innerHeight} onInfiniteLoad={this.nextPage}>
             <div className="is-searching not-searching">
              <ul className="search-results-ul">
                 {this.state.restaurants.map((result) => <div className="search-results" key={result.restaurant.R.res_id}><Link to={`/restaurant/${result.restaurant.id}`}><li className="r-name">{result.restaurant.name}</li> <li className="r-cuisine">{result.restaurant.cuisines}</li><li className="r-cost">{result.restaurant.currency}{result.restaurant.average_cost_for_two}</li>
